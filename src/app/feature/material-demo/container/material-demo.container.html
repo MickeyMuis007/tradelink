@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer mode="side" class="example-sidenav">
+    <p>Auto-resizing sidenav ljke</p>
+  </mat-drawer>
+  <mat-drawer-content class="example-sidenav-content">
+    <button (click)="drawer.toggle()">Toggle drawer</button>
+  </mat-drawer-content>
+</mat-drawer-container>
