@@ -13,7 +13,7 @@ const exportedModules = [
   imports: [
     CommonModule,
     exportedModules,
-    // MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot()
   ],
   exports: [
     exportedModules,

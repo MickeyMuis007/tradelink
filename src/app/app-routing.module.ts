@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SideMenuComponent } from "./component/side-menu/side-menu.component";
+import { MainNavbarComponent } from './component/main-navbar/main-navbar.component';
 
 
 const routes: Routes = [
@@ -13,5 +14,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  static components = [SideMenuComponent];
+  static components = [SideMenuComponent, MainNavbarComponent];
 }

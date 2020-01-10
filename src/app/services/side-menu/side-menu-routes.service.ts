@@ -15,11 +15,8 @@ const ADMIN_ROUTES: Observable<SideMenuNode[]> = of([
     uri: "",
     children: [
       {
-        name: "Buttons",
-        uri: "",
-        children: [
-          { name : "Basic", uri: ""}
-        ]
+        name: "Navbars",
+        uri: ""
       }
     ]
   }
