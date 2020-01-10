@@ -2,3 +2,14 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "../node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss";
+@import "../node_modules/angular-bootstrap-md//assets/scss/mdb.scss";
+
+// fontawesome imports
+// $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
+// @import "~@fortawesome/fontawesome-free/scss/fontawesome";
+// @import "~@fortawesome/fontawesome-free/scss/brands";
+// @import "~@fortawesome/fontawesome-free/scss/regular";
+// @import "~@fortawesome/fontawesome-free/scss/solid";
+// @import "~@fortawesome/fontawesome-free/scss/v4-shims";

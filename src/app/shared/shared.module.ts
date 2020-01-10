@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 import { MaterialDesignModule } from "./material-design/material-design.module";
 
@@ -11,10 +12,12 @@ const exportedModules = [
   declarations: [],
   imports: [
     CommonModule,
-    exportedModules
+    exportedModules,
+    // MDBBootstrapModule.forRoot()
   ],
   exports: [
-    exportedModules
+    exportedModules,
+    MDBBootstrapModule
   ]
 })
 export class SharedModule { }
