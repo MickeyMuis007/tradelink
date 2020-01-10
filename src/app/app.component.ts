@@ -13,18 +13,17 @@ const TREE_DATA: FoodNode[] = [
     name: "Material",
     url: "material",
     children: [
-      { name: "Side Nav", url: "material/side-nav" },
-      { name: "Tree", url: "material/tree-nav" }
+      { name: "Side Nav", url: "material/side-nav" }
     ]
   }, {
-    name: "Vegetables",
-    url: "veg",
+    name: "MDB",
+    url: "mdb",
     children: [
       {
-        name: "Green",
-        url: "green",
+        name: "Buttons",
+        url: "mdb/button",
         children: [
-          { name : "Broccoli", url: "broccoli"}
+          { name : "Basic", url: "mdb/button/basic"}
         ]
       }
     ]

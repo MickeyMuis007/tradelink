@@ -1,0 +1,9 @@
+.menu-item {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.menu-item:hover {
+  transform: scale(1.01, 1);
+  opacity: 0.5;
+}

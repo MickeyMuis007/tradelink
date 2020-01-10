@@ -26,7 +26,25 @@
 </mdb-navbar>
 
 <mat-drawer-container class="mat-drawer-container" autosize>
-  <mat-drawer #drawer mode="side">
+  <mat-drawer #drawer mode="side" class="mat-drawer-menu">
+    <p>Admin</p>
+    <mat-divider></mat-divider>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="mat-tree-menu">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <a mat-button [routerLink]="[node.url]">{{node.name}}</a> 
+      </mat-tree-node>
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <a mat-icon-button matTreeNodeToggle style="width:auto" [routerLink]="[node.url]"
+          [attr.aria-label]="'toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' :  'chevron_right'}}
+          </mat-icon>
+        {{node.name}}
+        </a>
+      </mat-tree-node>
+    </mat-tree>
+    <p>Itron</p>
+    <mat-divider></mat-divider>
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
         <a mat-button [routerLink]="[node.url]">{{node.name}}</a> 
