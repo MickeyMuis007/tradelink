@@ -15,7 +15,7 @@ export class AppFacadeService {
     return this._sideMenuRoutesService;
   }
 
-  constructor(private injector:Injector) { }
+  constructor(private injector: Injector) { }
 
   /*********************************
    * SideMenuRoutesServices Methods
@@ -23,5 +23,9 @@ export class AppFacadeService {
   getAdminRoutes() {
     return this.sideMenuRoutesService.getAdminRoutes();
   }
-  
+
+  getOntecRoutes() {
+    return this.sideMenuRoutesService.getOntecRoutes();
+  }
+
 }

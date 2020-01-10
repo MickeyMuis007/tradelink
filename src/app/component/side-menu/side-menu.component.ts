@@ -31,6 +31,7 @@ export class SideMenuComponent implements OnInit {
   );
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  ontecDataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
   constructor(private appFacadeService: AppFacadeService) { }
 
@@ -38,6 +39,11 @@ export class SideMenuComponent implements OnInit {
     this.appFacadeService.getAdminRoutes().subscribe(sideNodes => {
       this.dataSource.data = sideNodes;
     });
+
+    this.appFacadeService.getOntecRoutes().subscribe(sideNodes => {
+      this.ontecDataSource.data = sideNodes;
+    })
+
   }
 
   hasChild = (_: number, node: FlatTreeNode) => node.expandable;

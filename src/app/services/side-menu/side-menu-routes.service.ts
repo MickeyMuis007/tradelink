@@ -23,11 +23,45 @@ const ADMIN_ROUTES: Observable<SideMenuNode[]> = of([
       }
     ]
   }
+]);
+
+
+const ONTEC_ROUTES: Observable<SideMenuNode[]> = of([
+  {
+    name: "Services",
+    uri: "",
+    children: [
+      { name: "Techology", uri: "" },
+      { name: "Analytics", uri: "" },
+      { name: "Facilities", uri: "" },
+      { name: "Expertise", uri: "" },
+      { name: "Products", uri: "" }
+    ]
+  }, {
+    name: "Technology",
+    uri: "",
+    children: [
+      {
+        name: "Micro-Generation",
+        uri: "",
+        children: [
+          { name : "Basic", uri: ""}
+        ]
+      },
+      { name: "In Home Vending", uri: "" },
+      { name: "Apps And Online Payment", uri: "" },
+      { name: "Load Management", uri: "" }
+    ]
+  }
 ])
 
 @Injectable()
 export class SideMenuRoutesService {
   getAdminRoutes(): Observable<SideMenuNode[]> {
     return ADMIN_ROUTES;
+  }
+
+  getOntecRoutes(): Observable<SideMenuNode[]> {
+    return ONTEC_ROUTES;
   }
 }

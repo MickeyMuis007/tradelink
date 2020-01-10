@@ -5,7 +5,7 @@
     <a mat-button [routerLink]="[node.uri]">{{node.name}}</a>
   </mat-tree-node>
   <mat-tree-node *matTreeNodeDef="let node: when: hasChild" matTreeNodePadding>
-    <a mat-icon-button matTreeNodeToggle [routerLink]="[node.uri]"
+    <a mat-icon-button matTreeNodeToggle [routerLink]="[node.uri]" class="parent-menu"
       [attr.aria-label]="'toggle ' + node.name">
       <mat-icon>
         {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
@@ -14,9 +14,9 @@
     </a>
   </mat-tree-node>
 </mat-tree>
-<p>Itron Menu</p>
+<p>Ontec Menu</p>
 <mat-divider></mat-divider>
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="admin-menu">
+<mat-tree [dataSource]="ontecDataSource" [treeControl]="treeControl" class="admin-menu">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
     <a mat-button [routerLink]="[node.uri]">{{node.name}}</a>
   </mat-tree-node>
