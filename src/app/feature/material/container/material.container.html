@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <h1 class="text-center">{{title}}</h1>
+  <mat-grid-list cols="4" rowHeight="50px">
+    <mat-grid-tile 
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
+      [routerLink]="[tile.uri]">
+      {{tile.name}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

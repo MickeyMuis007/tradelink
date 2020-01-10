@@ -29,21 +29,23 @@
   <mat-drawer #drawer mode="side">
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-        <button mat-button [routerLink]="['material']">{{node.name}}</button> 
+        <a mat-button [routerLink]="[node.url]">{{node.name}}</a> 
       </mat-tree-node>
       <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-        <button mat-icon-button matTreeNodeToggle style="width:auto"
+        <a mat-icon-button matTreeNodeToggle style="width:auto" [routerLink]="[node.url]"
           [attr.aria-label]="'toggle ' + node.name">
           <mat-icon class="mat-icon-rtl-mirror">
             {{treeControl.isExpanded(node) ? 'expand_more' :  'chevron_right'}}
           </mat-icon>
         {{node.name}}
-      </button>
+        </a>
       </mat-tree-node>
     </mat-tree>
   </mat-drawer>
   <mat-drawer-content>
-    <button (click)="drawer.toggle()" mat-fab>Toggle</button>
+    <a (click)="drawer.toggle()" mat-fab class="side-menu-toggle">
+      <mat-icon class="side-menu-toggle-icon">{{drawer.opened ? 'chevron_left' : 'chevron_right'}}</mat-icon>
+    </a>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

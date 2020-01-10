@@ -4,23 +4,27 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from "@angular/material/tree"
 
 interface FoodNode {
   name: string;
+  url: string,
   children?: FoodNode[];
 }
 
 const TREE_DATA: FoodNode[] = [
   {
     name: "Material",
+    url: "material",
     children: [
-      { name: "Side Nav" },
-      { name: "Tree" }
+      { name: "Side Nav", url: "material/side-nav" },
+      { name: "Tree", url: "material/tree-nav" }
     ]
   }, {
     name: "Vegetables",
+    url: "veg",
     children: [
       {
         name: "Green",
+        url: "green",
         children: [
-          { name : "Broccoli"}
+          { name : "Broccoli", url: "broccoli"}
         ]
       }
     ]
@@ -43,6 +47,7 @@ export class AppComponent {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
+      url: node.url,
       level: level
     }
   }

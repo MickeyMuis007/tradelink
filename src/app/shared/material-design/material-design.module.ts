@@ -5,7 +5,9 @@ import {
   MatSidenavModule,
   MatTreeModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatGridListModule,
+  MatDividerModule
 } from "@angular/material";
 
 @NgModule({
@@ -18,7 +20,9 @@ import {
     MatSidenavModule,
     MatTreeModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule,
+    MatDividerModule
   ]
 })
 export class MaterialDesignModule { }

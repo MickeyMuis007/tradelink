@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "material", loadChildren: () => import("./feature/material-demo/material-demo.module").then(m => m.MaterialDemoModule)}
+  { path: "material", loadChildren: () => import("./feature/material/material.module").then(m => m.MaterialModule)}
 ];
 
 @NgModule({
