@@ -5,27 +5,7 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from "@angular/material/tree"
 import { SideMenuNode } from "./model/side-menu-node.model";
 import { FlatTreeNode } from "src/app/common/model/flat-tree/flat-tree-node";
 
-const TREE_DATA: SideMenuNode[] = [
-  {
-    name: "Material",
-    uri: "material",
-    children: [
-      { name: "Side Nav", uri: "material/side-nav" }
-    ]
-  }, {
-    name: "MDB",
-    uri: "",
-    children: [
-      {
-        name: "Buttons",
-        uri: "",
-        children: [
-          { name : "Basic", uri: ""}
-        ]
-      }
-    ]
-  }
-]
+import { AppFacadeService } from "../../services/app-facade.service";
 
 @Component({
   selector: "app-side-menu",
@@ -52,10 +32,12 @@ export class SideMenuComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() { }
+  constructor(private appFacadeService: AppFacadeService) { }
 
   ngOnInit() {
-    this.dataSource.data = TREE_DATA;
+    this.appFacadeService.getAdminRoutes().subscribe(sideNodes => {
+      this.dataSource.data = sideNodes;
+    });
   }
 
   hasChild = (_: number, node: FlatTreeNode) => node.expandable;
