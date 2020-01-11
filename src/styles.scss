@@ -6,6 +6,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "../node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss";
 @import "../node_modules/angular-bootstrap-md//assets/scss/mdb.scss";
 
+@import "./assets/scss/colors.scss";
+
 // fontawesome imports
 // $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 // @import "~@fortawesome/fontawesome-free/scss/fontawesome";

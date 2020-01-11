@@ -6,7 +6,8 @@ import { MainNavbarComponent } from './component/main-navbar/main-navbar.compone
 
 
 const routes: Routes = [
-  { path: "material", loadChildren: () => import("./feature/material/material.module").then(m => m.MaterialModule) }
+  { path: "material", loadChildren: () => import("./feature/material/material.module").then(m => m.MaterialModule) },
+  { path: "ontec", loadChildren: () => import("./feature/ontec/ontec.module").then(m => m.OntecModule)}
 ];
 
 @NgModule({

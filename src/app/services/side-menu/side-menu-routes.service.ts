@@ -25,30 +25,34 @@ const ADMIN_ROUTES: Observable<SideMenuNode[]> = of([
 
 const ONTEC_ROUTES: Observable<SideMenuNode[]> = of([
   {
-    name: "Services",
-    uri: "",
+    name: "Ontec",
+    uri: "ontec",
     children: [
-      { name: "Techology", uri: "" },
-      { name: "Analytics", uri: "" },
-      { name: "Facilities", uri: "" },
-      { name: "Expertise", uri: "" },
-      { name: "Products", uri: "" }
-    ]
-  }, {
-    name: "Technology",
-    uri: "",
-    children: [
+      { name: "Services", uri: "" },
+      { name: "Pricing", uri: "" },
       {
-        name: "Micro-Generation",
+        name: "Technology",
         uri: "",
         children: [
-          { name : "Basic", uri: ""}
+          {
+            name: "Micro-Generation",
+            uri: "",
+            children: [
+              { name: "Basic", uri: "" }
+            ]
+          },
+          { name: "In Home Vending", uri: "" },
+          { name: "Apps And Online Payment", uri: "" },
+          { name: "Load Management", uri: "" }
         ]
-      },
-      { name: "In Home Vending", uri: "" },
-      { name: "Apps And Online Payment", uri: "" },
-      { name: "Load Management", uri: "" }
+      }
     ]
+  }, {
+    name: "Login",
+    uri: ""
+  }, {
+    name: "Profile",
+    uri: ""
   }
 ])
 
