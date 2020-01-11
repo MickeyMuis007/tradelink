@@ -28,8 +28,8 @@ const ONTEC_ROUTES: Observable<SideMenuNode[]> = of([
     name: "Ontec",
     uri: "ontec",
     children: [
-      { name: "Services", uri: "" },
-      { name: "Pricing", uri: "" },
+      { name: "Services", uri: "ontec/service" },
+      { name: "Quotes", uri: "ontec/quote" },
       {
         name: "Technology",
         uri: "",

@@ -3,9 +3,13 @@ import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
 
 import { OntecContainer } from "./container/ontec.container";
+import { ServiceComponent } from "./component/service/service.component";
+import { QuoteComponent } from "./component/quote/quote.component";
 
 const routes: Routes = [
-  { path: "", component: OntecContainer }
+  { path: "", component: OntecContainer },
+  { path: "service", component: ServiceComponent },
+  { path: "quote", component: QuoteComponent }
 ]
 
 @NgModule({
@@ -14,8 +18,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports: [ RouterModule ]
+  exports: [RouterModule]
 })
 export class OntecRoutingModule {
-  static components = [OntecContainer];
- }
+  static components = [ OntecContainer, ServiceComponent, QuoteComponent ];
+}
