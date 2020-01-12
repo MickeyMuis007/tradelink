@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center">Request Quote</h1>
+  <button mat-raised-button (click)="isEnabled = !isEnabled" type="button">
+    {{!isEnabled ? 'Enable' : 'Disable'}}
+  </button>
+  <mat-horizontal-stepper [linear]="isEnabled" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form>
+        <ng-template matStepLabel>Fill details</ng-template>
+        <h2>Form1</h2>
+        <button mat-button matStepperNext type="button">Next</button>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form>
+        <ng-template matStepLabel>Confirm Email</ng-template>
+        <h2>Form2</h2>
+        <button mat-button matStepperPrevious type="button">Previous</button>
+        <button mat-button matStepperNext type="button">Next</button>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <h2>Done</h2>
+      <button mat-button matStepperPrevious type="button">Previous</button>
+      <button mat-button matStepperNext type="button">Next</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

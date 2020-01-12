@@ -5,11 +5,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { OntecContainer } from "./container/ontec.container";
 import { ServiceComponent } from "./component/service/service.component";
 import { QuoteComponent } from "./component/quote/quote.component";
+import { QuoteRequestComponent } from './component/quote/quote-request/quote-request.component';
 
 const routes: Routes = [
   { path: "", component: OntecContainer },
   { path: "service", component: ServiceComponent },
-  { path: "quote", component: QuoteComponent }
+  { path: "quote", component: QuoteComponent },
+  { path: "quote-request", component: QuoteRequestComponent }
 ]
 
 @NgModule({
@@ -21,5 +23,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class OntecRoutingModule {
-  static components = [ OntecContainer, ServiceComponent, QuoteComponent ];
+  static components = [ OntecContainer, ServiceComponent, QuoteComponent, QuoteRequestComponent ];
 }
