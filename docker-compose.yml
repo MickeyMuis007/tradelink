@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  itron-ui:
+    image: mickeymuis007/itron-ui:1.0.0
+    container_name: itron-ui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/home/node/app'
+      - '/home/node/app/node_modules'
+    ports:
+      - '4201:4200'
