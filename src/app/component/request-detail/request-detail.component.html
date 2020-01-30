@@ -1,0 +1,20 @@
+<h1>Request Detail</h1>
+<mat-divider></mat-divider>
+<div class="container-fluid">
+  <form [formGroup]="requestForm" (ngSubmit)="save()">
+    <mat-form-field class="col-md-12">
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="col-md-12">
+      <input matInput [ngxMatDatetimePicker]="picker" placeholder="Date Time" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+    </mat-form-field>
+    <div class="col-md-12">
+      <mat-checkbox formControlName="active">Active</mat-checkbox>
+    </div>
+
+    <button mat-button color="primary" type="submit">Save</button>
+    <button mat-button color="warn" type="button">Clear</button>
+  </form>
+</div>

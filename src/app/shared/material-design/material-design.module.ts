@@ -8,8 +8,15 @@ import {
   MatButtonModule,
   MatGridListModule,
   MatDividerModule,
-  MatStepperModule
+  MatStepperModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCheckboxModule,
+  MatTableModule
 } from "@angular/material";
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from 'ngx-mat-datetime-picker';
 
 @NgModule({
   declarations: [],
@@ -24,7 +31,15 @@ import {
     MatButtonModule,
     MatGridListModule,
     MatDividerModule,
-    MatStepperModule
+    MatStepperModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    MatCheckboxModule,
+    MatTableModule
   ]
 })
 export class MaterialDesignModule { }

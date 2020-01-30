@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { SharedModule } from "./shared/shared.module";
-import { AppServiceModule } from "./services/app-service.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { AppServiceModule } from "./services/app-service.module";
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    AppServiceModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
