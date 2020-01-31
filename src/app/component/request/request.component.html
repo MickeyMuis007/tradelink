@@ -3,17 +3,17 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
+        <th scope="col">Number</th>
         <th scope="col">Date</th>
         <th scope="col">Active</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let request of requestList">
+        <th scope="row"><a [routerLink]="['request']" [queryParams]="{id: '1'}">view more...</a></th>
+        <td>{{request.number}}</td>
+        <td>{{request.date}}</td>
+        <td>{{request.active}}</td>
       </tr>
     </tbody>
   </table>

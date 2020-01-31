@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from "@angular/forms";
 import { RequestModel } from '../request/request.model';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: "app-request-detail",
@@ -10,16 +11,18 @@ import { RequestModel } from '../request/request.model';
 export class RequestDetailComponent implements OnInit {
   requestForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private requestService: RequestService) { }
 
   ngOnInit() {
     this.initForm();
   }
 
   save() {
-    if (this.requestForm.valid) {
+    if (this.requestForm.valid || true) {
       const requestModel = this.requestForm.value as RequestModel
       console.log(requestModel);
+      this.requestService.addRequest(requestModel);
+      console.log(this.requestService.getRequests());
     }
   }
 
