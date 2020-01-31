@@ -2,19 +2,82 @@
 <mat-divider></mat-divider>
 <div class="container-fluid">
   <form [formGroup]="requestForm" (ngSubmit)="save()">
+    <h4>General:</h4>
+    <mat-divider></mat-divider>
     <mat-form-field class="col-md-12">
-      <input matInput placeholder="Name" formControlName="name">
+      <input matInput placeholder="Number" type="number" class="form-number" formControlName="number" required>
     </mat-form-field>
     <mat-form-field class="col-md-12">
-      <input matInput [ngxMatDatetimePicker]="picker" placeholder="Date Time" formControlName="date">
+      <input matInput [ngxMatDatetimePicker]="picker" placeholder="Date Time" formControlName="date" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
     </mat-form-field>
     <div class="col-md-12">
       <mat-checkbox formControlName="active">Active</mat-checkbox>
     </div>
+    <h4>Transactions:</h4>
+    <mat-divider></mat-divider>
+    <mat-accordion formArrayName="transactions"
+      *ngFor="let item of requestForm.get('transactions').controls; let i = index;" class="col-md-12">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Transactions
+          </mat-panel-title>
+          <mat-panel-description>
+            Manage transaction
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-    <button mat-button color="primary" type="submit">Save</button>
-    <button mat-button color="warn" type="button">Clear</button>
+        <div class="form-group" [formGroupName]="i">
+          <mat-form-field class="col-md-12">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type" required>
+              <mat-option value="CL">CL</mat-option>
+              <mat-option value="RE">RE</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <mat-form-field class="col-md-12">
+            <input matInput placeholder="Number" type="number" class="form-number" formControlName="number" required>
+          </mat-form-field>
+
+          <mat-form-field class="col-md-12">
+            <input matInput [ngxMatDatetimePicker]="picker1" placeholder="Date Time" formControlName="date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker1></ngx-mat-datetime-picker>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+    <div class="row d-flex justify-content-end">
+      <button mat-button type="button" (click)="addTransaction()"
+        [disabled]="!requestForm.controls['transactions'].valid">Add Transaction</button>
+    </div>
+    <h4>Provider:</h4>
+    <mat-divider></mat-divider>
+    <div class="form-group" formGroupName="provider" class="col-md-12">
+      <mat-form-field class="col-md-12">
+        <input matInput placeholder="Name" formControlName="name" required>
+      </mat-form-field>
+      <div class="from-group" formGroupName="contact">
+        <h6>Contact:</h6>
+        <mat-divider></mat-divider>
+        <mat-form-field class="col-md-12">
+          <input matInput placeholder="Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field class="col-md-12">
+          <input matInput placeholder="Telephone Number" formControlName="telephoneNumber">
+        </mat-form-field>
+        <mat-form-field class="col-md-12">
+          <input matInput placeholder="Enter your email" formControlName="emailAddress" required>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button mat-button type="submit">Save</button>
+    <button mat-button color="warn" type="button" (click)="clear()">Clear</button>
   </form>
 </div>
