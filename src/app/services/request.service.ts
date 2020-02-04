@@ -25,8 +25,6 @@ export class RequestService {
   }
 
   addRequest(requestModel: RequestModel): Observable<RequestModel> {
-    this.requestList.push(requestModel);
-    this.requestObserver.next(this.requestList);
     this.http.post(this.url, requestModel).subscribe((item: RequestModel) => {
       this.requestList.push(item);
       this.requestObserver.next(this.requestList);
