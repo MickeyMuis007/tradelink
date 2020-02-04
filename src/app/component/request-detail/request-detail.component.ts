@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder, NgForm } from "@angular/forms";
 import { RequestModel } from '../request/request.model';
 import { RequestService } from 'src/app/services/request.service';
 
@@ -17,12 +17,13 @@ export class RequestDetailComponent implements OnInit {
     this.initForm();
   }
 
-  save() {
-    if (this.requestForm.valid || true) {
+  save(form: NgForm) {
+    if (this.requestForm.valid) {
       const requestModel = this.requestForm.value as RequestModel
       console.log(requestModel);
-      this.requestService.addRequest(requestModel);
-      console.log(this.requestService.getRequests());
+      this.requestService.addRequest(requestModel).subscribe(item => {
+        form.resetForm();
+      });
     }
   }
 
@@ -32,8 +33,8 @@ export class RequestDetailComponent implements OnInit {
       transaction.push(this.createTransactionItem());
   }
 
-  clear() {
-    this.requestForm.reset();
+  clear(form: NgForm) {
+    form.resetForm(); 
   }
 
   private initForm() {

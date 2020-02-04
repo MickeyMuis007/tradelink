@@ -1,11 +1,11 @@
 <h1>Request Detail</h1>
 <mat-divider></mat-divider>
 <div class="container-fluid">
-  <form [formGroup]="requestForm" (ngSubmit)="save()">
+  <form [formGroup]="requestForm" #f="ngForm" (ngSubmit)="save(f)">
     <h4>General:</h4>
     <mat-divider></mat-divider>
     <mat-form-field class="col-md-12">
-      <input matInput placeholder="Number" type="number" class="form-number" formControlName="number" required>
+      <input matInput placeholder="Number" type="number" class="form-number" formControlName="number">
     </mat-form-field>
     <mat-form-field class="col-md-12">
       <input matInput [ngxMatDatetimePicker]="picker" placeholder="Date Time" formControlName="date" required>
@@ -78,6 +78,6 @@
     </div>
 
     <button mat-button type="submit">Save</button>
-    <button mat-button color="warn" type="button" (click)="clear()">Clear</button>
+    <button mat-button color="warn" type="button" (click)="clear(f)">Clear</button>
   </form>
 </div>
