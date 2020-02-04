@@ -1,4 +1,5 @@
 export interface RequestModel {
+  id: string;
   number: string;
   date: Date;
   active: boolean;
