@@ -16,7 +16,8 @@ import {
   MatCheckboxModule,
   MatTableModule,
   MatExpansionModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCardModule
 } from "@angular/material";
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from 'ngx-mat-datetime-picker';
 
@@ -43,7 +44,8 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from 'ngx-mat-date
     MatCheckboxModule,
     MatTableModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ]
 })
 export class MaterialDesignModule { }

@@ -33,4 +33,8 @@ export class RequestService {
     });
     return of(requestModel);
   }
+
+  getById(id: string): Observable<RequestModel> {
+    return this.http.get<RequestModel>(this.url + "/" + id);
+  }
 }

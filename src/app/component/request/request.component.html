@@ -6,14 +6,21 @@
         <th scope="col">Number</th>
         <th scope="col">Date</th>
         <th scope="col">Active</th>
+        <th scope="col">Provider</th>
+        <th scope="col">Transaction Count</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let request of requestList">
-        <th scope="row"><a [routerLink]="['request-view']" [queryParams]="{id: request.id}">view more...</a></th>
+        <th scope="row"><a [routerLink]="['/request-view']" [queryParams]="{id: request.id}">view more...</a></th>
         <td>{{request.number}}</td>
         <td>{{request.date}}</td>
         <td>{{request.active}}</td>
+        <td>{{request.provider && request.provider.name}}</td>
+        <td>{{request.transactions && request.transactions.length}}</td>
+      </tr>
+      <tr>
+       
       </tr>
     </tbody>
   </table>

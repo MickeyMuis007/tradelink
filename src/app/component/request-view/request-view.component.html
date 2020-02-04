@@ -1,0 +1,79 @@
+<div class="container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="image"></div>
+      <mat-card-title>Request View</mat-card-title>
+      <mat-card-subtitle>Detail View of request</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <h2>General</h2>
+        <mat-divider></mat-divider>
+        <div class="row">
+          <div class="col-md-2">Number</div>
+          <div class="col-md-10">{{request.number}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Date</div>
+          <div class="col-md-10">{{request.date}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Active</div>
+          <div class="col-md-10">{{request.active}}</div>
+        </div>
+        <div *ngIf="!!request.provider">
+          <h2>Provider</h2>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-md-2">Name</div>
+            <div class="col-md-10">{{request.provider.name}}</div>
+          </div>
+          <div *ngIf="!!request.provider.contact">
+            <h2>Contact</h2>
+            <mat-divider></mat-divider>
+            <div class="row">
+              <div class="col-md-2">Name</div>
+              <div class="col-md-10">{{request.provider.contact.name}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">Telephone Number</div>
+              <div class="col-md-10">{{request.provider.contact.telephoneNumber}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">Email</div>
+              <div class="col-md-10">{{request.provider.contact.emailAddress}}</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!!request.transactions && request.transactions.length > 0">
+          <h2>Transactions</h2>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Type</th>
+                  <th scope="col">Number</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let transaction of request.transactions">
+                  <td>{{transaction.type}}</td>
+                  <td>{{transaction.number}}</td>
+                  <td>{{transaction.date}}</td>
+                </tr>
+                <tr>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [routerLink]="['..']" mat-fab color="accent">Back</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
